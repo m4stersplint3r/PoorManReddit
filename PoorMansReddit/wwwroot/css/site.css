@@ -1,0 +1,112 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+.navbar {
+    background: linear-gradient(to right,#3c0808,#130101);
+}
+a.navbar-brand {
+    color: whitesmoke;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.hometitle {
+    color: whitesmoke;
+}
+/* Provide sufficient contrast against white background */
+a {
+    color: silver;
+}
+a:hover {
+    color: darkorange;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    color: white;
+    /* Margin bottom by footer height */
+    background: linear-gradient(to right,#3c0808,#130101);
+    margin-bottom: 60px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+    background: linear-gradient(to right,#3c0808,#130101);
+}
+
+#oneitem {
+    background: linear-gradient(to left,#1c0303,#0c0909);
+    float: left;
+    border-radius: 2em;
+    padding: 1.5em;
+    margin-bottom: 2em;
+    margin-right: 2em;
+}
+
+#data {
+    text-align:left;
+    float:left;
+}
+
+.image {
+}
+
+.image-colorize {
+    width: 50%;
+    overflow: hidden;
+    transition: transform .5s, filter 1.5s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.image-colorize:hover{
+    filter: grayscale(0);
+    transform: scale(1.1);
+}

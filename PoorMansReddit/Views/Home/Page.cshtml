@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Rootobject
+@{
+    foreach (var item in Model.data.children)
+    {
+        string url = "http://reddit.com" + item.data.permalink;
+        string highResUrl = "";
+
+        if (item.data.is_reddit_media_domain)
+        {
+            bool hasHighResUrl = item.data.preview.enabled;
+            //int highResUrlCnt = item.data.preview.images.Count();
+            int highResUrlRealCnt = item.data.preview.images[0].resolutions.Count();
+            highResUrl = item.data.preview.images[0].resolutions[highResUrlRealCnt - 1].url;
+            //highResUrl = item.data.url;
+            highResUrl = highResUrl.Replace("&amp;", "&");
+        }
+
+        <div id="oneitem">
+            <a href="@url">
+                <h4 id="titles">@item.data.title</h4>
+            </a>
+            <div>
+                <div id="data">
+                    <h6># of comments: @item.data.num_comments</h6>
+                    <h6 id="score">Score: @item.data.score</h6>
+                    <h6>Awards: @item.data.total_awards_received</h6>
+                    <h6>User: <a href="https://www.reddit.com/user/@item.data.author">@item.data.author</a></h6>
+                </div>
+                    @if (@item.data.is_video)
+                    {
+                        <video width="@item.data.media.reddit_video.width" height="@item.data.media.reddit_video.height" controls>
+                            <source src="@item.data.media.reddit_video.fallback_url" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    }
+                    else
+                    {
+                        if (@item.data.thumbnail != "self")
+                        {
+                            <a href="@item.data.url_overridden_by_dest"><img src="@highResUrl" class="image-colorize" style="display:block;margin:auto;" /></a>
+                        }
+                    }
+            </div>
+        </div>
+            }
+        }
